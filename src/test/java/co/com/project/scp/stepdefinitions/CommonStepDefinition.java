@@ -1,6 +1,8 @@
 package co.com.project.scp.stepdefinitions;
 
 
+import co.com.project.scp.exceptions.ExceptionMessages;
+import co.com.project.scp.exceptions.MyBusinessException;
 import co.com.project.scp.userinterface.ValidateDocumentPage;
 import co.com.project.scp.util.LoadData;
 import cucumber.api.java.After;
@@ -16,7 +18,6 @@ import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-
 public class CommonStepDefinition extends PageObject {
     @Managed(driver = "chrome")
     private WebDriver driverBrowser = null;
@@ -31,18 +32,14 @@ public class CommonStepDefinition extends PageObject {
     @Before
     public void canBrowseTheWeb() {
 
-        System.setProperty("https.proxyHost","proxywsmed.bancolombia.corp");
-        System.setProperty("https.proxyPort","8080");
-        System.setProperty("https.proxyUser","#{userBank}#");
-        System.setProperty("https.proxyPassword","#{passwordBank}#");
 
         String os = System.getProperty("os.name").toLowerCase();
         if (os.contains("win")) {
             System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-        } else if (os.contains("osx")) {
+        } else if (os.contains("mac")) {
             System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
         } else if (os.contains("nix") || os.contains("aix") || os.contains("nux")) {
-            System.setProperty("webdriver.chrome.driver", "");
+            throw new MyBusinessException(ExceptionMessages.EXCP_OS_UNSOPORTED);
         }
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("Ana").can(

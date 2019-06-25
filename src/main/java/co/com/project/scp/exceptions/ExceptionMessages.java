@@ -6,6 +6,7 @@ public enum ExceptionMessages {
 
 
     EXCEPTION_AL_BUSCAR_ELEMENTO("No se encontro el elemento"),
+    EXCP_OS_UNSOPORTED("Sistema operativo no soportado"),
 	EXCEPTION_AL_CERRAR_INGRESO_CLAVE("No cerro sesion en ingreso clave"),
 	EXCEPTION_AL_HACER_SCROLL("Error al hacer el scroll"),
 	EXCEPTION_AL_OCULTAR_TECLADO("Error al ocultar el teclado"),

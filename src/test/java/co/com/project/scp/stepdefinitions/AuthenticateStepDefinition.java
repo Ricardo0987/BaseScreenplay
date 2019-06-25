@@ -18,7 +18,6 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.containsString;
 
-
 public class AuthenticateStepDefinition extends PageObject {
 
 

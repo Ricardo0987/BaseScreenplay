@@ -9,6 +9,7 @@ Feature: Filiales WEB Site Authenticate
 
     Given I Upload the Transaction Data <index> of file <fileName> and browser <browser>
     When  I try to authenticate myself using my credentials
+    Then can see the dashboard
 
     Examples:
       | index | fileName     | browser |
