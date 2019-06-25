@@ -1,0 +1,26 @@
+[
+    {
+        "index": 1,
+        "orientation": "Exitoso",
+        "transactionName": "Autenticacion",
+        "expectResult": "¡Buen",
+        "descriptionCP": "Autenticacion correcta",
+        "user": {
+            "documentType": "CC",
+            "document": "qqqq",
+            "password": "qqq"
+        }
+    },
+    {
+        "index": 2,
+        "orientation": "Fallido",
+        "transactionName": "Autenticacion",
+        "expectResult": "Número de documento inválido",
+        "descriptionCP": "campo documento invalido",
+        "user": {
+            "documentType": "CC",
+            "document": "aaa ..  A",
+            "password": ""
+        }
+    }
+]

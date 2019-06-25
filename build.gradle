@@ -1,0 +1,63 @@
+group 'BaseScreenplay'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.8")
+    }
+}
+
+dependencies {
+
+    testCompile 'net.serenity-bdd:serenity-core:2.0.17'
+    testCompile 'net.serenity-bdd:serenity-junit:2.0.8'
+    testCompile 'net.serenity-bdd:serenity-cucumber:1.9.20'
+    testCompile 'net.serenity-bdd:serenity-screenplay:2.0.8'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:1.7.0'
+    testCompile 'org.slf4j:slf4j-simple:1.7.7'
+    testCompile group: 'org.testng', name: 'testng', version: '6.13.1'
+
+    compile 'net.serenity-bdd:serenity-core:2.0.17'
+    compile 'net.serenity-bdd:serenity-junit:2.0.8'
+    compile 'net.serenity-bdd:serenity-cucumber:1.9.20'
+    compile 'net.serenity-bdd:serenity-screenplay:2.0.8'
+
+    compile group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '2.0.8'
+
+}
+
+test {
+    systemProperty "file.encoding", "utf-8"
+    systemProperty "context", System.properties.getProperty("context")
+    systemProperty "webdriver.driver", System.properties.getProperty("webdriver.driver")
+}
+
+tasks.withType(Test) {
+    systemProperties = System.properties
+//maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
+
+gradle.startParameter.continueOnFailure = true
