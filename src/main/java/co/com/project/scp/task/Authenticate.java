@@ -1,7 +1,7 @@
 package co.com.project.scp.task;
 
 
-import co.com.project.scp.userinterface.ValidateDocumentPage;
+import co.com.project.scp.userinterface.HomePage;
 import co.com.project.scp.userinterface.ValidatePasswordPage;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -16,7 +16,7 @@ import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
-import static co.com.project.scp.userinterface.ValidateDocumentPage.*;
+import static co.com.project.scp.userinterface.HomePage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
@@ -59,17 +59,17 @@ public class Authenticate extends PageObject implements Task {
         actor.attemptsTo(
                 Check.whether(documentType.trim().length() > 0)
                         .andIfSo(
-                                Click.on(ValidateDocumentPage.optionDocumentType(documentType)))
+                                Click.on(HomePage.optionDocumentType(documentType)))
                         .otherwise(
                                 Hit.the(Keys.ESCAPE).into(BODY)),
-                Enter.theValue(document).into(ValidateDocumentPage.DOCUMENT_NUMBER),
+                Enter.theValue(document).into(HomePage.DOCUMENT_NUMBER),
                 Click.on(TITLE)
 
         );
         actor.attemptsTo(
                 Check.whether(SUBMIT.resolveFor(actor).isEnabled())
                         .andIfSo(
-                                Click.on(ValidateDocumentPage.SUBMIT)
+                                Click.on(HomePage.SUBMIT)
                         )
 
         );
