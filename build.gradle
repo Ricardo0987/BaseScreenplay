@@ -46,17 +46,31 @@ dependencies {
 
     compile group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: '2.0.8'
 
+    // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin
+    compile group: 'org.apache.maven.plugins', name: 'maven-surefire-plugin', version: '3.0.0-M3'
+// https://mvnrepository.com/artifact/com.github.mkolisnyk/cucumber-runner
+    compile group: 'com.github.mkolisnyk', name: 'cucumber-runner', version: '1.3.5'
+
+
 }
 
+
 test {
+//    include '**/*Runner*'
     systemProperty "file.encoding", "utf-8"
     systemProperty "context", System.properties.getProperty("context")
     systemProperty "webdriver.driver", System.properties.getProperty("webdriver.driver")
+
 }
 
 tasks.withType(Test) {
     systemProperties = System.properties
-//maxParallelForks = Runtime.runtime.availableProcessors()
+
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
 }
 
 

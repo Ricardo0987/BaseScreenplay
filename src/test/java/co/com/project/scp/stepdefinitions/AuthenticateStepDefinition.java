@@ -2,13 +2,15 @@ package co.com.project.scp.stepdefinitions;
 
 
 import co.com.project.scp.questions.TheText;
-import co.com.project.scp.task.LogOut;
 import co.com.project.scp.task.Authenticate;
+import co.com.project.scp.task.LogOut;
 import co.com.project.scp.util.LoadData;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.pages.PageObject;
+import org.junit.Assert;
 
 import static co.com.project.scp.userinterface.CommonPage.MODAL_MESSAGE;
 import static co.com.project.scp.userinterface.CommonPage.VALIDATE_AUTH_FORM;
@@ -23,13 +25,13 @@ public class AuthenticateStepDefinition extends PageObject {
 
     @When("^I try to authenticate myself using my credentials$")
     public void iTryToAuthenticateMyselfUsingMyCredentials() {
-    	waitFor(600).milliseconds();
+        waitFor(600).milliseconds();
         theActorInTheSpotlight().attemptsTo(Authenticate.withTheFollowingData(
                 LoadData.currentCase.getUser().getDocumentType(),
                 LoadData.currentCase.getUser().getDocument(),
                 LoadData.currentCase.getUser().getPassword()));
     }
-    
+
     @Then("^can see the dashboard$")
     public void canSeeTheDashboard() {
         theActorInTheSpotlight().should(seeThat(TheText.ofFollowingTarget(WELCOME_MESSAGE), containsString(LoadData.currentCase.getExpectResult())));
@@ -58,6 +60,15 @@ public class AuthenticateStepDefinition extends PageObject {
         theActorInTheSpotlight().attemptsTo(
                 LogOut.now()
         );
+    }
+
+    @Given("^prueba$")
+    public void prueba() {
+        System.out.println("\u001B[32m" + "-------------------/////////   Prueba start ////////////-------------------" + "\u001B[0m");
+        waitFor(1).seconds();
+        System.out.println("\u001B[35m" + "-------------------/////////   Prueba end ////////////-------------------" + "\u001B[0m");
+
+        Assert.assertTrue("-------------------/////////   Assert message ////////////-------------------", false);
     }
 
 }

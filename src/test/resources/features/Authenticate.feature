@@ -9,7 +9,6 @@ Feature: Filiales WEB Site Authenticate
 
     Given I Upload the Transaction Data <index> of file <fileName> and browser <browser>
     When  I try to authenticate myself using my credentials
-    Then can see the dashboard
 
     Examples:
       | index | fileName     | browser |
@@ -27,3 +26,7 @@ Feature: Filiales WEB Site Authenticate
       | index | fileName     | browser |
       | 2     | authenticate | chrome  |
 
+  @TestCase3
+  Scenario: TestCase3 - Show error message when i try validate document to the Filiales WEB Site with invalid document
+
+    Given prueba

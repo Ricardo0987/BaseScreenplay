@@ -10,7 +10,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
         features = "src/test/resources/features/Authenticate.feature",
         glue = "co.com.project.scp.stepdefinitions",
         tags = "@TestCase1",
-        snippets = SnippetType.CAMELCASE
+        snippets = SnippetType.CAMELCASE,
+        plugin = {"rerun:target/rerun.txt" }
      	//plugin = "json:target/cucumber_json/cucumber.json"
 )
 public class AuthenticateRunner {

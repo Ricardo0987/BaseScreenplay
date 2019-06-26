@@ -16,6 +16,8 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CommonStepDefinition extends PageObject {
