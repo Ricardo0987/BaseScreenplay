@@ -8,10 +8,13 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CommonStepDefinition extends PageObject {
     @Managed(driver = "chrome")
@@ -39,6 +42,9 @@ public class CommonStepDefinition extends PageObject {
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("Ana").can(
                 BrowseTheWeb.with(driverBrowser));
+
+        theActorInTheSpotlight().can(BrowseTheWeb.with(driverBrowser));
+        theActorInTheSpotlight().attemptsTo(Open.browserOn().the(homePage));
     }
 
 }
