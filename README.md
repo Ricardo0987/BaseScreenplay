@@ -1,25 +1,11 @@
 # Base Screenplay
 
-## Base Screenplay.
-
-Esta aplicación tiene al momento disponible las transacciones de:
+## Para correr prueba ejecutar
 
 ```
-* Autenticación.
+gradle clean test aggregate
 ```
 
-## Requerimientos
-
-Para correr el proyecto es necesario lo siguiente:
-
-```
-* [Java JDKhttps://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 1.8 o superior.
-* [Google Chromehttps://www.google.com/intl/es/chrome/) Versión 75.0.3770.80 o superior.
-* Conexión a la red interna WIFIBC
-* Network Connections "*cloudant.com"
-```
-
-Estos requerimientos son necesarios ya que la automatización esta desarrollada en el lenguaje Java y se ejecuta sobre el navegador de Google Chrome, teniendo como gestor de dependencias gradle el cual se puede ejecutar como wrapper.
 ## **Resumen**
 
 Se utiliza BDD como framework de automatización sobre el patrón de arquitectura de ScreenPlay donde segregamos las capas de automatización.
@@ -54,10 +40,3 @@ Una capa donde se encontrarán todos los objetos complejos de negocio, como pers
 ### Exceptions
 Una capa donde se crearán las excepciones específicas que permitirán la legibilidad de los reportes cuando las pruebas fallen.
 
-
-Este proecto es básicamente de documentación viva, en donde se evidencian la ejecución de los casos manuales, teniendo ya las siguientes funcionalidades:
-
-```
-* Multiple Sesión.
-* Ingreos y Egresos.
-```
