@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-import static co.com.project.scp.userinterface.DashBoardPage.LOGOUT_BUTTON;
+import static co.com.project.scp.userinterface.SignInPage.LOGOUT_BUTTON;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class LogOut extends PageObject implements Task {

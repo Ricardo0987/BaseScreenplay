@@ -1,0 +1,26 @@
+[
+    {
+        "index": 1,
+        "orientation": "Exitoso",
+        "transactionName": "Autenticacion - Compra",
+        "expectResult": "Your order on My Store is complete.",
+        "descriptionCP": "Compra vestido con usuario registrado",
+        "user": {
+            "email": "ricardo@hotmail.com",
+            "password": "ricardo12345",
+            "status": "registered"
+        }
+    },
+    {
+        "index": 2,
+        "orientation": "Exitoso",
+        "transactionName": "Autenticacion - Compra",
+        "expectResult": "Compra Exitosa",
+        "descriptionCP": "Compra vestido con usuario no registrado",
+        "user": {
+            "email": "ricardo@hotmail.com",
+            "password": "ricardo12345",
+            "status": "registered"
+        }
+    }
+]

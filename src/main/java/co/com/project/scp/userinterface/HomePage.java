@@ -16,6 +16,14 @@ public class HomePage extends PageObject {
     public static final Target SUBMIT = Target.the("Continue button").located(By.id("btn-continuar"));
     public static final String OPTIONS_DOCUMENT_TYPE = "aria-owns";
 
+
+
+    public static final Target SIGN_IN = Target.the("SIGN IN button").located(By.xpath("//*[@class=\"login\"]"));
+
+
+
+
+
     public static Target optionDocumentType(String optionTypeDocument) {
         Target documentTypeOption;
         documentTypeOption = Target.the("Option Document Type").located(By.xpath("//*[@ng-reflect-value=\"" + optionTypeDocument + "\"]"));

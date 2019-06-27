@@ -3,34 +3,21 @@ package co.com.project.scp.model;
 public class User {
 
 
-    private String documentType;
+    private String status;
 
-    private String document;
+    private String email;
 
     private String password;
 
-    public String getDocumentType() {
-        return documentType;
+    public String getStatus() {
+        return status;
     }
 
-    public void setDocumentType(String documentType) {
-        this.documentType = documentType;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
-        this.document = document;
+    public String getEmail() {
+        return email;
     }
 
     public String getPassword() {
         return password;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }
