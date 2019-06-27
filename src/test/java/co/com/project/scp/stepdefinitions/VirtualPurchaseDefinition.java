@@ -21,7 +21,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
-import static co.com.project.scp.userinterface.CategoryPage.ORDER_CONFIRMATION;
+import static co.com.project.scp.userinterface.PaymentWizardPage.ORDER_CONFIRMATION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.containsString;

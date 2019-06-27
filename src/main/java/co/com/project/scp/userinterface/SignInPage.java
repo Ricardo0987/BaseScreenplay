@@ -11,7 +11,7 @@ public class SignInPage extends PageObject {
     public static final Target SUBMIT_LOGIN = Target.the("submit Login").located(By.id("SubmitLogin"));
 
     public static final Target EMAIL_REG = Target.the("email register input").located(By.id("email_create"));
-    public static final Target AUTH_REG = Target.the("authentication button").located(By.id("authentication"));
+    public static final Target AUTH_REG = Target.the("authentication button").located(By.id("SubmitCreate"));
 
 
 }

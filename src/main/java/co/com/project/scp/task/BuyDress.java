@@ -11,7 +11,9 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.ArrayList;
 import java.util.List;
 
-import static co.com.project.scp.userinterface.CategoryPage.*;
+import static co.com.project.scp.userinterface.CategoryPage.DRESSES_BTN;
+import static co.com.project.scp.userinterface.CategoryPage.DRESSES_PRICES;
+import static co.com.project.scp.userinterface.PaymentWizardPage.*;
 import static java.lang.Integer.parseInt;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
