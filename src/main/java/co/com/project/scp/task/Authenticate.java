@@ -51,9 +51,9 @@ public class Authenticate extends PageObject implements Task {
 
     private <T extends Actor> void register(T actor) {
 
-        actor.attemptsTo(Enter.theValue(user.getEmail()).into(EMAIL_REG));
+        actor.attemptsTo(Enter.theValue(user.getEmail() + Math.floor(Math.random() * 100 + 1)).into(EMAIL_REG));
         actor.attemptsTo(Click.on(AUTH_REG));
-        
+
         waitFor(3).seconds();
 
         actor.attemptsTo(
@@ -79,6 +79,8 @@ public class Authenticate extends PageObject implements Task {
         );
         Select state = new Select(getDriver().findElement(By.id(STATE)));
         state.selectByValue(user.getState());
+        actor.attemptsTo(Click.on(SUBMIT_REGISTER));
+
 
     }
 

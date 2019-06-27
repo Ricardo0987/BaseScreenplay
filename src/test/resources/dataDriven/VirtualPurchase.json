@@ -15,7 +15,7 @@
         "index": 2,
         "orientation": "Exitoso",
         "transactionName": "Autenticacion - Compra",
-        "expectResult": "Compra Exitosa",
+        "expectResult": "Your order on My Store is complete.",
         "descriptionCP": "Compra vestido con usuario no registrado",
         "user": {
             "email": "megan@hotmail.com",

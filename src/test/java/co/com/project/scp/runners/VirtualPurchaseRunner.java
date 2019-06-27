@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/VirtualPurchase.feature",
         glue = "co.com.project.scp.stepdefinitions",
-        tags = "@TestCase2",
+//        tags = "@TestCase2",
         snippets = SnippetType.CAMELCASE
 )
 public class VirtualPurchaseRunner {

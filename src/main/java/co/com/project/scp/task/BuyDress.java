@@ -30,8 +30,10 @@ public class BuyDress extends PageObject implements Task {
         actor.attemptsTo(Click.on(DRESSES_BTN));
 
         List<WebElementFacade> dressesPrices = DRESSES_PRICES.resolveAllFor(actor);
-        List<Integer> prices = new ArrayList<Integer>();
-        int price = 0, maxPrice = 0, indexMaxPrice = 0;
+        List<Integer> prices = new ArrayList();
+        int price;
+        int maxPrice = 0;
+        int indexMaxPrice = 0;
 
         for (int i = 1; i < dressesPrices.size(); i++) {
             price = parseInt(dressesPrices.get(i).getAttribute("innerHTML")
