@@ -2,19 +2,16 @@ package co.com.project.scp.task;
 
 
 import co.com.project.scp.model.User;
-import co.com.project.scp.userinterface.RegisterPage;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.regex.Pattern;
-
 import static co.com.project.scp.userinterface.HomePage.SIGN_IN;
+import static co.com.project.scp.userinterface.RegisterPage.*;
 import static co.com.project.scp.userinterface.SignInPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -56,12 +53,32 @@ public class Authenticate extends PageObject implements Task {
 
         actor.attemptsTo(Enter.theValue(user.getEmail()).into(EMAIL_REG));
         actor.attemptsTo(Click.on(AUTH_REG));
+        
+        waitFor(3).seconds();
 
-//        Select days = new Select((WebElement) RegisterPage.DAYS);
-        Select days = new Select(getDriver().findElement(By.id("days")));
-        days.selectByValue("3");
-        Select months = new Select(getDriver().findElement(By.id("months")));
-        months.selectByValue("4");
+        actor.attemptsTo(
+                Click.on(GEN_MR),
+                Enter.theValue(user.getFirstName()).into(FIRSTNAME),
+                Enter.theValue(user.getLastName()).into(LASTNAME),
+                Enter.theValue(user.getPassword()).into(PASSWD)
+        );
+
+        Select days = new Select(getDriver().findElement(By.id(DAY)));
+        days.selectByValue(user.getDay());
+        Select months = new Select(getDriver().findElement(By.id(MONTH)));
+        months.selectByValue(user.getMonth());
+        Select years = new Select(getDriver().findElement(By.id(YEAR)));
+        years.selectByValue(user.getYear());
+
+        actor.attemptsTo(
+                Enter.theValue(user.getAddress()).into(ADDRESS),
+                Enter.theValue(user.getCity()).into(CITY),
+                Enter.theValue(user.getPostCode()).into(POSTCODE),
+                Enter.theValue(user.getPhoneMobile()).into(PHONE),
+                Enter.theValue(user.getAlias()).into(ALIAS)
+        );
+        Select state = new Select(getDriver().findElement(By.id(STATE)));
+        state.selectByValue(user.getState());
 
     }
 

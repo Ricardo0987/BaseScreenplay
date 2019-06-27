@@ -20,7 +20,19 @@
         "user": {
             "email": "megan@hotmail.com",
             "password": "megan12345",
-            "status": "unRegistered"
+            "status": "unRegistered",
+            "firstName" : "Megan",
+            "lastName" : "Gomez",
+            "day" : "2",
+            "month" : "3",
+            "year" : "1989",
+            "address" : "cr 45#45 -6",
+            "city" : "Medellin",
+            "state" : "21",
+            "postCode" : "50001",
+            "country" : "1",
+            "phoneMobile" : "3017834567",
+            "alias" : "MeganKi"
         }
     },
     {
