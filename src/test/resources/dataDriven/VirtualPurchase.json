@@ -18,8 +18,20 @@
         "expectResult": "Compra Exitosa",
         "descriptionCP": "Compra vestido con usuario no registrado",
         "user": {
-            "email": "ricardo@hotmail.com",
-            "password": "ricardo12345",
+            "email": "megan@hotmail.com",
+            "password": "megan12345",
+            "status": "unRegistered"
+        }
+    },
+    {
+        "index": 3,
+        "orientation": "Fallido",
+        "transactionName": "Autenticacion",
+        "expectResult": "Authentication failed.",
+        "descriptionCP": "Login Fallido",
+        "user": {
+            "email": "nuevo123@hotmail.com",
+            "password": "123564456",
             "status": "registered"
         }
     }

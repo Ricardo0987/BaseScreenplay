@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 
 public class SignInPage extends PageObject {
 
-    public static final Target LOGOUT_BUTTON = Target.the("Logout button").located(By.id("logOutId"));
     public static final Target EMAIL_LOGIN = Target.the("email input").located(By.id("email"));
     public static final Target PASS_LOGIN = Target.the("password input").located(By.id("passwd"));
     public static final Target SUBMIT_LOGIN = Target.the("submit Login").located(By.id("SubmitLogin"));

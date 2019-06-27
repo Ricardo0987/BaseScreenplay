@@ -6,12 +6,10 @@ import co.com.project.scp.exceptions.MyBusinessException;
 import co.com.project.scp.questions.TheText;
 import co.com.project.scp.task.Authenticate;
 import co.com.project.scp.task.BuyDress;
-import co.com.project.scp.task.LogOut;
 import co.com.project.scp.userinterface.HomePage;
 import co.com.project.scp.util.LoadData;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -79,16 +77,9 @@ public class VirtualPurchaseDefinition extends PageObject {
 
     }
 
-
-    @And("^Validate close full session$")
-    public void validateCloseFullSession() {
-        waitFor(500).milliseconds();
-        theActorInTheSpotlight().attemptsTo(
-                LogOut.now()
-        );
-    }
-
     @Then("^should see the error message$")
     public void shouldSeeTheErrorMessage() {
+        theActorInTheSpotlight().should(seeThat(TheText.ofBody(), containsString(LoadData.currentCase.getExpectResult())));
+
     }
 }
